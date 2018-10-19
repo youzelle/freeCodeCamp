@@ -1,0 +1,16 @@
+function rot13(str) { 
+  str = str.split('');
+  let map1 = [];
+  for (let i = 0; i <= str.length-1; i++){
+    let char = str[i].charCodeAt()
+    if (char >= 65 && char <= 77) {
+      map1.push(String.fromCharCode(char + 13));
+    } else if (char >= 78 && char <= 90) { 
+      map1.push(String.fromCharCode(char - 13));
+    } else 
+      map1.push(String.fromCharCode(char));
+}
+  return map1.join('');
+}
+
+rot13("SERR PBQR PNZC");

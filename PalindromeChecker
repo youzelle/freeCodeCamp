@@ -1,0 +1,9 @@
+function palindrome(str) {
+  let input = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  let inputReversed = (input+"").split('').reverse().join('');
+  if (input === inputReversed) {
+    return true;
+  } else {
+      return false;
+  }
+};

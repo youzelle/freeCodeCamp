@@ -1,0 +1,21 @@
+function convertToRoman(num) {
+  const Decimals = [3000, 2000, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+  const romanNumerals = ['MMM','MM', 'M', 'CM', 'DCCC', 'DCC', 'DC', 'D', 'CD', 'CCC', 'CC', 'C', 'XC', 'LXXX','LXX', 'LX','L', 'XL','XXX', 'XX', 'X', 'IX','VIII', 'VII', 'VI', 'V' ,'IV' ,'III', 'II', 'I']; 
+  num = (num+'').split('').reverse();
+  const decArray = [];
+  const numArray = [];
+  for (let i = 0; i <= num.length-1 ; i++) {
+      while (i >= 0 && i <= num.length-1) {
+        decArray.push(num[i]*Math.pow(10,i));
+        i++;
+    }
+  }
+  for (let decA = 0; decA <= decArray.length-1; decA++) {
+    for ( let d = 0; d <= Decimals.length-1; d++) {
+      if (decArray[decA] === Decimals[d]) {
+        numArray.push(romanNumerals[d])
+      }
+    }
+  }
+ return numArray.reverse().join('');
+}
